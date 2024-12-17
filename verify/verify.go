@@ -503,7 +503,7 @@ func decodeCerts(chain *spb.CertificateChain, key abi.ReportSigner, knownProduct
 			return nil, nil, err
 		}
 	}
-	if len(roots) == 0 {
+	if len(roots[productLine]) == 0 {
 		root := trust.AMDRootCertsProduct(productLine)
 		// Require that the root matches embedded root certs.
 		root.AskSev = trust.DefaultRootCerts[productLine].AskSev
